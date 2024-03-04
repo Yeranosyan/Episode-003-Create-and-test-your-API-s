@@ -1,0 +1,64 @@
+body {
+  font-family: "SF Pro Display", sans-serif;
+  color: #2e2f2f;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+table {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.btn {
+  background-color: #4e96e3;
+  color: #fff;
+  border: none;
+  padding: 5px 16px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+}

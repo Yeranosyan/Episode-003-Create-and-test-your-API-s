@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Storage</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      // Function to handle delete button click
+      function deleteCar(carId) {
+        // Send a DELETE request to the server to delete the car
+        fetch(`/cars/${carId}`, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to delete car");
+            }
+            // Reload the page after successful deletion
+            location.reload();
+          })
+          .catch((error) => {
+            console.error("Error deleting car:", error);
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cars Storage</h1>
+      <a href="/" class="btn">Back to Home</a>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cars.forEach(car => { %>
+          <tr>
+            <td><%= car.id %></td>
+            <td><%= car.brand %></td>
+            <td><%= car.model %></td>
+            <td><%= car.year %></td>
+            <td>
+              <button class="btn" onclick="deleteCar('<%= car.id %>')">
+                Delete
+              </button>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
